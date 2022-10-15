@@ -43,13 +43,11 @@ class LoginActivity : AppCompatActivity() {
 
         user.signUpInBackground { e ->
             if (e == null) {
-                // User has successfully signed in
-
-                // TODO: Navigate user to the MainActivity
-                // TODO: SHow a toast to indicate use successfully signed up for an account
+                Log.i(TAG, "Successfully registered")
+                goToMainActivity()
             } else {
-                // TODO: Show a toast
                 e.printStackTrace()
+                Toast.makeText(this, "Error occurred during registration", Toast.LENGTH_SHORT).show()
             }
         }
     }
