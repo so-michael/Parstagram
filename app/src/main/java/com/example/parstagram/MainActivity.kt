@@ -12,6 +12,7 @@ import android.util.Log
 import android.widget.*
 import androidx.core.content.FileProvider
 import com.example.parstagram.Post
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.parse.*
 import java.io.File
 
@@ -35,6 +36,23 @@ class MainActivity : AppCompatActivity() {
 
         findViewById<Button>(R.id.btnTakePicture).setOnClickListener {
             onLaunchCamera()
+        }
+
+        findViewById<BottomNavigationView>(R.id.bottom_navigation).setOnItemSelectedListener {
+            item ->
+            when(item.itemId) {
+                R.id.action_home -> {
+                    Toast.makeText(this, "Home", Toast.LENGTH_SHORT).show()
+                }
+                R.id.action_compose -> {
+                    Toast.makeText(this, "Compose", Toast.LENGTH_SHORT).show()
+                }
+                R.id.action_profile -> {
+                    Toast.makeText(this, "Profile", Toast.LENGTH_SHORT).show()
+                }
+            }
+
+            true
         }
 
         findViewById<Button>(R.id.btnSubmit).setOnClickListener {
