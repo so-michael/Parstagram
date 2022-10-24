@@ -77,7 +77,10 @@ class ComposeFragment : Fragment() {
             } else{
                 Log.i(MainActivity.TAG, "Sucessfully saved post")
                 //TODO reseting the edit text field to be empty
+                view?.findViewById<EditText>(R.id.description)?.setText("")
                 //TODO reset the imageView to empty
+                view?.findViewById<ImageView>(R.id.picture)?.setImageResource(android.R.color.transparent)
+
             }
 
         }
